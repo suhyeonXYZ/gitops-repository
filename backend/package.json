@@ -6,7 +6,6 @@
   "directories": {
     "test": "test"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/suhyeonXYZ/gitops-repository/issues"
   },
-  "homepage": "https://github.com/suhyeonXYZ/gitops-repository#readme"
+  "homepage": "https://github.com/suhyeonXYZ/gitops-repository#readme",
+  "dependencies": {
+    "eslint": "^8.57.0"
+  }
 }
