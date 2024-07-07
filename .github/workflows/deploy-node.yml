@@ -24,6 +24,9 @@ jobs:
         run: yarn  install
         working-directory: 'backend'
 
+      - name: Remove existing dist directory
+        run: rm -rf backend/dist
+
       - name: Create dist directory
         run: mkdir backend/dist
 
