@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [14.x]  # 올바른 Node.js LTS 버전 설정
 
     steps:
       - uses: actions/checkout@v4
@@ -22,5 +22,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm lint
+      - run: eslint .  # 구체적인 linting 도구로 수정
       - run: npm test
