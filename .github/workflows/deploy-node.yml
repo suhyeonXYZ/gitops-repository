@@ -13,31 +13,34 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        # backend 디렉토리에 checkout
         with:
           path: backend  # 저장소를 backend 디렉토리에 checkout
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '14.x'  # Replace with your desired Node.js version
+          node-version: '14.x'  # 원하는 Node.js 버전으로 변경하세요
+
+      - name: Clear npm cache
+        run: npm cache clean --force
+        working-directory: backend  # backend 디렉토리에서 npm 명령어 실행
+
+      - name: Update npm dependencies
+        run: npm install --legacy-peer-deps
+        working-directory: backend  # backend 디렉토리에서 npm 명령어 실행
 
       - name: Install dependencies
         run: npm ci
-        # backend 디렉토리에서 npm 명령어 실행
-        working-directory: backend
+        working-directory: backend  # backend 디렉토리에서 npm 명령어 실행
 
       - name: Build project
         run: npm run build --if-present
-        # backend 디렉토리에서 npm 명령어 실행
-        working-directory: backend
+        working-directory: backend  # backend 디렉토리에서 npm 명령어 실행
 
       - name: Run linting
         run: npm run lint
-        # backend 디렉토리에서 npm 명령어 실행
-        working-directory: backend
+        working-directory: backend  # backend 디렉토리에서 npm 명령어 실행
 
       - name: Run tests
         run: npm test
-        # backend 디렉토리에서 npm 명령어 실행
-        working-directory: backend
+        working-directory: backend  # backend 디렉토리에서 npm 명령어 실행
