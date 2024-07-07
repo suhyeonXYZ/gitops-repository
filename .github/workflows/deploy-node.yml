@@ -10,17 +10,34 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]  # 올바른 Node.js LTS 버전 설정
-
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        # backend 디렉토리에 checkout
+        with:
+          path: backend  # 저장소를 backend 디렉토리에 checkout
+
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: eslint .  # 구체적인 linting 도구로 수정
-      - run: npm test
+          node-version: '14.x'  # Replace with your desired Node.js version
+
+      - name: Install dependencies
+        run: npm ci
+        # backend 디렉토리에서 npm 명령어 실행
+        working-directory: backend
+
+      - name: Build project
+        run: npm run build --if-present
+        # backend 디렉토리에서 npm 명령어 실행
+        working-directory: backend
+
+      - name: Run linting
+        run: npm run lint
+        # backend 디렉토리에서 npm 명령어 실행
+        working-directory: backend
+
+      - name: Run tests
+        run: npm test
+        # backend 디렉토리에서 npm 명령어 실행
+        working-directory: backend
