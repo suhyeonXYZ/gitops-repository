@@ -1,34 +1,26 @@
 {
-  "name": "backend",
+  "name": "nodejs-ci",
   "version": "1.0.0",
-  "description": "gitops-repository",
+  "description": "nodejs-ci",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
+  "devDependencies": {},
   "scripts": {
-    "test": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/suhyeonXYZ/gitops-repository.git"
   },
   "keywords": [
-    "zicdding"
+    "gitops"
   ],
-  "author": "suhyeon",
+  "author": "suhyeonsong",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/suhyeonXYZ/gitops-repository/issues"
   },
-  "homepage": "https://github.com/suhyeonXYZ/gitops-repository#readme",
-  "dependencies": {
-    "eslint": "9.x",
-    "globals": "^15.8.0"
-  },
-  "devDependencies": {
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-jest": "^28.6.0",
-    "prettier": "^3.3.2"
-  }
+  "homepage": "https://github.com/suhyeonXYZ/gitops-repository#readme"
 }
