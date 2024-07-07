@@ -1,0 +1,34 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "gitops-repository",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suhyeonXYZ/gitops-repository.git"
+  },
+  "keywords": [
+    "zicdding"
+  ],
+  "author": "suhyeon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suhyeonXYZ/gitops-repository/issues"
+  },
+  "homepage": "https://github.com/suhyeonXYZ/gitops-repository#readme",
+  "dependencies": {
+    "eslint": "9.x",
+    "globals": "^15.8.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jest": "^28.6.0",
+    "prettier": "^3.3.2"
+  }
+}
