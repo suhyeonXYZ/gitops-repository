@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          path: backend
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v2
@@ -21,16 +23,20 @@ jobs:
           node-version: '14'
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn  install
+        working-directory: backend
 
       - name: Create dist directory
         run: mkdir dist 
+        working-directory: backend
 
       - name: Build project
-        run: yarn build  
+        run: yarn  build  
+        working-directory: backend
 
       - name: Run tests
-        run: yarn test  
+        run: yarn  test  
+        working-directory: backend
 
       - name: Deploy application
         run: |
